@@ -1,8 +1,0 @@
-[package]
-name = "day7"
-version = "0.1.0"
-authors = ["Ethan Mott <emott@sbd2.com>"]
-edition = "2018"
-
-[dependencies]
-petgraph = "0.4.13"
