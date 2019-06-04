@@ -1,7 +1,7 @@
 use std::fs::read_to_string;
 
 fn main() {
-    let prefix = read_to_string("day04.txt").expect("Error opening day04 input file.");
+    let prefix = read_to_string("input/day04.txt").expect("Error opening day04 input file.");
 
     println!("day04: {}", find_matching_hash(prefix.as_str(), "00000"));
 }

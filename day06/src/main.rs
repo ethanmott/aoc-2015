@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufReader, BufRead};
 
 fn main() {
-    let file = File::open("day06.txt").expect("Error opening day06 input file.");
+    let file = File::open("input/day06.txt").expect("Error opening day06 input file.");
     let lines: Vec<String> = BufReader::new(file).lines().into_iter()
         .map(|line| line.expect("Failed to read line."))
         .collect();

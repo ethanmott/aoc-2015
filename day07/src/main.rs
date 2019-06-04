@@ -3,7 +3,7 @@ use std::io::{BufReader, BufRead};
 use std::collections::HashMap;
 
 fn main() {
-    let file = File::open("day07.txt").expect("Error opening day07 input file.");
+    let file = File::open("input/day07.txt").expect("Error opening day07 input file.");
     let nodes: Vec<WiringNode> = BufReader::new(file).lines().into_iter()
         .map(|line| line.expect("Failed to read line."))
         .map(|l| parse_wiring(&l))

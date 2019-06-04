@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
-    let mut file = File::open("day01.txt").expect("Error opening day01 input file.");
+    let mut file = File::open("input/day01.txt").expect("Error opening day01 input file.");
     let mut buf = Vec::new();
     file.read_to_end(&mut buf).expect("Error reading day01 input file.");
 

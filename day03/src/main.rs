@@ -5,7 +5,7 @@ use std::ops::Add;
 
 
 fn main() {
-    let mut file = File::open("day03.txt").expect("Error opening day03 input file.");
+    let mut file = File::open("input/day03.txt").expect("Error opening day03 input file.");
     let mut moves = Vec::new();
     file.read_to_end(&mut moves).expect("Error reading day03 input file.");
 

@@ -5,7 +5,7 @@ use std::collections::HashMap;
 use std::ops::Range;
 
 fn main() {
-    let file = File::open("day05.txt").expect("Error opening day05 input file.");
+    let file = File::open("input/day05.txt").expect("Error opening day05 input file.");
     let lines: Vec<String> = BufReader::new(file).lines().into_iter()
         .map(|line| line.expect("Failed to read line."))
         .collect();

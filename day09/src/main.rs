@@ -4,7 +4,7 @@ use std::collections::HashMap;
 use std::collections::HashSet;
 
 fn main() {
-    let file = File::open("day09.txt").expect("Error opening day09 input file.");
+    let file = File::open("input/day09.txt").expect("Error opening day09 input file.");
     let lines: Vec<String> = BufReader::new(file).lines().into_iter()
         .map(|line| line.expect("Failed to read line."))
         .collect();
