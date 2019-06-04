@@ -71,3 +71,17 @@ fn find_path_distances(
 
     (min, max)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_run() {
+        assert_eq!(run(&vec![
+            "London to Dublin = 464".to_string(),
+            "London to Belfast = 518".to_string(),
+            "Dublin to Belfast = 141".to_string()
+        ]), (605, 982));
+    }
+}
