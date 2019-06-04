@@ -35,7 +35,7 @@ type WiringNode = (Wiring, WireIdentifier);
 #[derive(Debug)]
 enum WireOrValue {
     Wire(WireIdentifier),
-    Value(u16)
+    Value(u16),
 }
 
 #[derive(Clone)]
@@ -46,7 +46,7 @@ enum Wiring {
     And(WireOrValue, WireOrValue),
     Or(WireOrValue, WireOrValue),
     LShift(WireOrValue, WireOrValue),
-    RShift(WireOrValue, WireOrValue)
+    RShift(WireOrValue, WireOrValue),
 }
 
 fn resolve(value: &WireOrValue, values: &mut HashMap<WireIdentifier, Wiring>) -> u16 {

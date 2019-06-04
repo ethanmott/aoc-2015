@@ -35,18 +35,18 @@ fn unescaped_length(s: &str) -> Result<i32, String> {
             match chars.next() {
                 None => {
                     return Err(format!("Expected a char after \\ but found none."));
-                },
+                }
                 Some((_, c2)) => {
                     result.push(match c2 {
                         '\\' => '\\',
-                        '\"' =>  '\"',
+                        '\"' => '\"',
                         'x' => {
                             let _ = chars.next().unwrap();
                             let _ = chars.next().unwrap();
 
                             '?'
-                        },
-                        x=>  x
+                        }
+                        x => x
                     });
                 }
             }

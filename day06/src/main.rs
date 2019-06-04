@@ -98,7 +98,7 @@ impl InstructionHandler<LightGrid<u32>> for LightGrid<u32> {
                         if *brightness > 0 {
                             *brightness -= 1
                         }
-                    },
+                    }
                     InstructionType::Toggle => *brightness += 2
                 }
             }
@@ -109,21 +109,21 @@ impl InstructionHandler<LightGrid<u32>> for LightGrid<u32> {
 #[derive(Debug)]
 struct Coordinate {
     x: i32,
-    y: i32
+    y: i32,
 }
 
 #[derive(Debug)]
 enum InstructionType {
     TurnOn,
     TurnOff,
-    Toggle
+    Toggle,
 }
 
 #[derive(Debug)]
 struct Instruction {
     instruction_type: InstructionType,
     top_left: Coordinate,
-    bottom_right: Coordinate
+    bottom_right: Coordinate,
 }
 
 fn parse_instruction(line: &str) -> Instruction {
@@ -136,7 +136,7 @@ fn parse_instruction(line: &str) -> Instruction {
     Instruction {
         instruction_type: parse_instruction_type(typ.as_str()),
         top_left,
-        bottom_right
+        bottom_right,
     }
 }
 
@@ -158,11 +158,11 @@ fn parse_coordinates(s: &str) -> (Coordinate, Coordinate) {
     (
         Coordinate {
             x: c1.next().unwrap().parse::<i32>().unwrap(),
-            y: c1.next().unwrap().parse::<i32>().unwrap()
+            y: c1.next().unwrap().parse::<i32>().unwrap(),
         },
         Coordinate {
             x: c2.next().unwrap().parse::<i32>().unwrap(),
-            y: c2.next().unwrap().parse::<i32>().unwrap()
+            y: c2.next().unwrap().parse::<i32>().unwrap(),
         }
     )
 }

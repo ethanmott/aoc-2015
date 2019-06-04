@@ -35,8 +35,8 @@ fn has_3_vowels(s: &str) -> bool {
 
 fn has_repeating(s: &str) -> bool {
     for i in 1..s.len() {
-        let c1 = &s[i-1..i];
-        let c2 = &s[i..i+1];
+        let c1 = &s[i - 1..i];
+        let c2 = &s[i..i + 1];
 
         if c1 == c2 {
             return true;
@@ -81,14 +81,14 @@ fn build_ngrams(s: &str, n: usize) -> NGrams {
         return n_grams;
     }
 
-    for i in n-1..s.len() {
-        let n_gram = &s[i-(n-1)..i+1];
+    for i in n - 1..s.len() {
+        let n_gram = &s[i - (n - 1)..i + 1];
 
         if !n_grams.contains_key(n_gram) {
             n_grams.insert(n_gram, Vec::new());
         }
 
-        n_grams.get_mut(n_gram).unwrap().push(i-(n-1)..i+1);
+        n_grams.get_mut(n_gram).unwrap().push(i - (n - 1)..i + 1);
     }
 
     n_grams

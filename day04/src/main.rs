@@ -5,6 +5,7 @@ fn main() {
 
     println!("day04: {}", find_matching_hash(prefix.as_str(), "00000"));
 }
+
 fn find_matching_hash(prefix: &str, needle: &str) -> i32 {
     let mut counter = 0;
 

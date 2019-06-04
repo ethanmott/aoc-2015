@@ -100,8 +100,8 @@ mod tests {
     #[test]
     fn test_parse_move() {
         assert_eq!(parse_move(&b'^'), Coordinates(0, 1));
-        assert_eq!( parse_move(&b'>'), Coordinates(1, 0));
-        assert_eq!( parse_move(&b'v'), Coordinates(0, -1));
+        assert_eq!(parse_move(&b'>'), Coordinates(1, 0));
+        assert_eq!(parse_move(&b'v'), Coordinates(0, -1));
         assert_eq!(parse_move(&b'<'), Coordinates(-1, 0));
         assert_eq!(parse_move(&b'x'), Coordinates(0, 0));
     }

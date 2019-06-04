@@ -23,16 +23,16 @@ fn sq_ft_needed(line: &str) -> i32 {
     let w = vec[1];
     let h = vec[2];
 
-    (2 * l * w) + (2 * w * h)  + (2 * h * l) + slack_needed(l, w, h)
+    (2 * l * w) + (2 * w * h) + (2 * h * l) + slack_needed(l, w, h)
 }
 
 fn slack_needed(l: i32, w: i32, h: i32) -> i32 {
     if l >= w && l >= h {
-        return w * h
+        return w * h;
     } else if w >= l && w >= h {
-        return l * h
+        return l * h;
     } else {
-        return l * w
+        return l * w;
     }
 }
 
