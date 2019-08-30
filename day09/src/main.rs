@@ -1,13 +1,9 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
 use std::collections::HashMap;
 use std::collections::HashSet;
+use common::files;
 
 fn main() {
-    let file = File::open("input/day09.txt").expect("Error opening day09 input file.");
-    let lines: Vec<String> = BufReader::new(file).lines().into_iter()
-        .map(|line| line.expect("Failed to read line."))
-        .collect();
+    let lines = files::get_file_lines("day09.txt");
 
     println!("{:?}", run(&lines));
 }

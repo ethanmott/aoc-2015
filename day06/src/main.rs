@@ -1,11 +1,7 @@
-use std::fs::File;
-use std::io::{BufReader, BufRead};
+use common::files;
 
 fn main() {
-    let file = File::open("input/day06.txt").expect("Error opening day06 input file.");
-    let lines: Vec<String> = BufReader::new(file).lines().into_iter()
-        .map(|line| line.expect("Failed to read line."))
-        .collect();
+    let lines = files::get_file_lines("day06.txt");
     let instructions: Vec<Instruction> = lines.iter()
         .map(|l| parse_instruction(l))
         .collect();

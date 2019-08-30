@@ -1,18 +1,14 @@
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::Read;
 use std::ops::Add;
-
+use common::files;
 
 fn main() {
-    let mut file = File::open("input/day03.txt").expect("Error opening day03 input file.");
-    let mut moves = Vec::new();
-    file.read_to_end(&mut moves).expect("Error reading day03 input file.");
+    let moves = files::get_file_bytes("day03.txt");
 
     let houses_visits = house_visits(&moves);
 
-    println!("part1: {}", multivisits_count(houses_visits));
-    println!("part2: {}", part2(&moves));
+    println!("day03.1: {}", multivisits_count(houses_visits));
+    println!("day03.2: {}", part2(&moves));
 }
 
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]

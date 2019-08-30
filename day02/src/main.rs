@@ -1,14 +1,11 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+use common::files;
 
 fn main() {
     let mut total = 0;
+    let lines = files::get_file_lines("day02.txt");
 
-    let file = File::open("input/day02.txt").expect("Error opening day02 input file.");
-
-    for (_index, line) in BufReader::new(file).lines().enumerate() {
-        total += line.map(|l| sq_ft_needed(l.as_str()))
-            .expect("Error reading day02 input file");
+    for line in lines {
+        total += sq_ft_needed(&line);
     }
 
     println!("{}", total);

@@ -1,14 +1,10 @@
-use std::fs::File;
-use std::io::{BufReader, BufRead};
 use regex::Regex;
 use std::collections::HashMap;
 use std::ops::Range;
+use common::files;
 
 fn main() {
-    let file = File::open("input/day05.txt").expect("Error opening day05 input file.");
-    let lines: Vec<String> = BufReader::new(file).lines().into_iter()
-        .map(|line| line.expect("Failed to read line."))
-        .collect();
+    let lines = files::get_file_lines("day05.txt");
 
     let part1_result = lines.iter()
         .filter(|line| part1_is_nice(line))

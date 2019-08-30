@@ -1,12 +1,9 @@
-use std::fs::File;
-use std::io::prelude::*;
+use common::files;
 
 fn main() {
-    let mut file = File::open("input/day01.txt").expect("Error opening day01 input file.");
-    let mut buf = Vec::new();
-    file.read_to_end(&mut buf).expect("Error reading day01 input file.");
+    let bytes = files::get_file_bytes("day01.txt");
 
-    println!("{}", day01(&buf));
+    println!("{}", day01(&bytes));
 }
 
 fn day01(input: &[u8]) -> i32 {

@@ -1,11 +1,9 @@
-use std::fs::File;
-use std::io::{BufReader, BufRead};
 use std::collections::HashMap;
+use common::files;
 
 fn main() {
-    let file = File::open("input/day07.txt").expect("Error opening day07 input file.");
-    let nodes: Vec<WiringNode> = BufReader::new(file).lines().into_iter()
-        .map(|line| line.expect("Failed to read line."))
+    let lines = files::get_file_lines("day07.txt");
+    let nodes: Vec<WiringNode> = lines.into_iter()
         .map(|l| parse_wiring(&l))
         .collect();
 

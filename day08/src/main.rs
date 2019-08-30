@@ -1,11 +1,8 @@
-use std::fs::File;
-use std::io::{BufReader, BufRead};
+
+use common::files;
 
 fn main() {
-    let file = File::open("input/day08.txt").expect("Error opening day08 input file.");
-    let lines: Vec<String> = BufReader::new(file).lines().into_iter()
-        .map(|line| line.expect("Failed to read line."))
-        .collect();
+    let lines = files::get_file_lines("day08.txt");
 
     let total_chars: i32 = lines.iter()
         .map(|l| l.len() as i32)
