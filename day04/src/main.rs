@@ -3,7 +3,8 @@ use std::fs::read_to_string;
 fn main() {
     let prefix = read_to_string("input/day04.txt").expect("Error opening day04 input file.");
 
-    println!("day04: {}", find_matching_hash(prefix.as_str(), "00000"));
+    println!("part1: {}", find_matching_hash(prefix.as_str(), "00000"));
+    println!("part2: {}", find_matching_hash(prefix.as_str(), "000000"));
 }
 
 fn find_matching_hash(prefix: &str, needle: &str) -> i32 {
